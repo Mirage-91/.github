@@ -1,0 +1,70 @@
+name: Bug report
+description: Something in the code or notebooks is broken or behaves unexpectedly
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! Please fill in as much as you can so we can reproduce the problem.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      description: Which part of the project is affected?
+      options:
+        - Offline pipeline (preprocessing, features, classifiers, training)
+        - Online pipeline / live streaming / game connector
+        - Notebooks / tutorials
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: A clear description of the bug and what you expected instead.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Commands you ran, script/notebook cell, and which recording (.xdf) or data you used.
+      placeholder: |
+        1. Run `python ...`
+        2. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Error output / traceback
+      description: Paste the full traceback or relevant log output.
+      render: shell
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, Python version, and versions of key packages (mne, numpy, scikit-learn, pylsl, ...).
+      placeholder: |
+        - OS: macOS 15
+        - Python: 3.11
+        - mne: 1.8
+        - scikit-learn: 1.5
+    validations:
+      required: true
+
+  - type: dropdown
+    id: hardware
+    attributes:
+      label: Was EEG hardware / a live stream involved?
+      options:
+        - "No – offline data only"
+        - "Yes – live LSL stream / amplifier"
+        - "Not sure"

@@ -1,0 +1,27 @@
+name: Documentation / tutorial
+description: Report unclear, missing, or wrong documentation, READMEs, or HowTo notebooks
+title: "[Docs]: "
+labels: ["documentation"]
+body:
+  - type: input
+    id: location
+    attributes:
+      label: Where?
+      description: File, notebook, or section that needs work.
+      placeholder: Mirage91 – HowTo/MI.ipynb, "Feature extraction" section
+    validations:
+      required: true
+
+  - type: textarea
+    id: issue
+    attributes:
+      label: What's wrong or missing?
+      description: What was confusing, outdated, or incorrect?
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested improvement
+      description: How could it be explained better?

@@ -1,0 +1,56 @@
+name: Organizational / team task
+description: Meetings, events, recordings, recruiting, equipment, admin – anything that isn't code
+title: "[Org]: "
+labels: ["organizational"]
+body:
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Meeting / workshop
+        - Event / competition (e.g. Cortical Peaks Challenge)
+        - Recording session / pilot training
+        - Equipment / hardware / lab access
+        - Recruiting / onboarding new members
+        - Funding / sponsoring / admin
+        - Outreach / social media / website
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What needs to be done?
+      description: Describe the task and its goal.
+    validations:
+      required: true
+
+  - type: input
+    id: deadline
+    attributes:
+      label: Deadline / date
+      description: When does this need to be done or when does it take place?
+      placeholder: 2026-11-15
+
+  - type: input
+    id: people
+    attributes:
+      label: People involved
+      description: Who is responsible or should be involved? (GitHub handles or names)
+
+  - type: textarea
+    id: todos
+    attributes:
+      label: To-dos
+      description: Break it down into steps if it helps.
+      value: |
+        - [ ]
+        - [ ]
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes / links
+      description: Relevant documents, contacts, locations, or anything else.
